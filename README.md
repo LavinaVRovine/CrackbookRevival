@@ -1,8 +1,10 @@
 Crackbook Revival
 =================
 
-Crackbook Revival is a fork of the original Crackbook by Gintautas Miliauskas,
-hosted at http://github.com/gintas/crackbook
+
+Crackbook Revival is a fork of the COPY of original Crackbook by Gintautas Miliauskas,
+hosted at http://github.com/gintas/crackbook. The copy is hosted at https://github.com/Ishmaeel/CrackbookRevival
+and made by Ishmaeel
 
 Installation
 ============

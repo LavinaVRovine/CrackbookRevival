@@ -9,7 +9,7 @@ var NOTIFICATION_TEXT = 'Time to get back to work!';
 var NOTIFICATION_THRESHOLD = 5;
 var NOTIFICATION_HIT_INTERVAL = 5;
 
-var TRACING = false;
+var TRACING = true;
 
 function drawIcon(img_name) {
   img_path = "images/" + img_name;
@@ -151,7 +151,6 @@ function handleNewPage(newTab, selectedTab, sendResponse) {
       lastDimmedTabId = newTab.id;
     }
   }
-
   // Tracking and logging.
   updateIcon(null, !!junkDomain);
   if (junkDomain) {
@@ -212,6 +211,8 @@ function newPageHandler(request, sender, sendResponse) {
   chrome.tabs.getSelected(null, function(selectedTab) {
     handleNewPage(sender.tab, selectedTab, sendResponse);
   });
+  // needed to return true coz of https://stackoverflow.com/questions/20077487/chrome-extension-message-passing-response-not-sent
+  return true;
 }
 
 function showNotification() {

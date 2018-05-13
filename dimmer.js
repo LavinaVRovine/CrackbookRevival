@@ -3,7 +3,7 @@ var DIMMER_DIV_ID = '_crackbook_dimmer_';
 var DIMMER_TEXT = "Wait %d seconds for the content to appear.";
 var DIMMER_SWITCH_TEXT = "The timer restarts if you switch away from this tab.";
 
-var TRACING = false;
+var TRACING = true;
 
 var original_url = null;
 var dimmer_delay = null;
@@ -188,7 +188,8 @@ function invoke_dimmer(action) {
 }
 
 // On initial load, check with the extension whether action needs to be taken.
-chrome.extension.sendRequest({}, function(response) {
+//chrome.extension.sendRequest
+chrome.runtime.sendMessage({}, function(response) {
   if (response.redirectUrl) {
     window.location.href = response.redirectUrl;
   } else if (response.dimmerAction) {
